@@ -1,0 +1,37 @@
+<html ng-app="myApp">
+
+<head>
+  <script src="node_modules/angular/angular.js"></script>
+  <script src='./app.js'></script>
+</head>
+
+<body>
+  <div ng-controller="mainCtr">
+    <h1>Hello Angular JS!</h1>
+    <span>Please enter your name:</span>
+    <input type="text" ng-model="userName"></input>
+
+    <p ng-if="currentTime.getHours() < 12">Good morning {{userName}}!</p>
+    <p ng-if="currentTime.getHours() >= 12 && currentTime.getHours() < 18">Good afternoon {{userName}}!</p>
+    <p ng-if="currentTime.getHours() >= 18">Good evening {{userName}}!</p>
+    <p>The current time is: {{currentTime.toTimeString()}}</p>
+
+    <button ng-click="updateTime()">Update Time</button>
+
+    <p>
+      <input type="checkbox" ng-model="choice" />
+    </p>
+    <p>
+      <input type="date" ng-model="dateString" />
+    </p>
+    <p>
+      <input type="radio" ng-model="radioChoice" value="1">Option 1</input>
+      <input type="radio" ng-model="radioChoice" value="2">Option 2</input>
+      <input type="radio" ng-model="radioChoice" value="3">Option 3</input>
+    </p>
+    <p>Date value: {{dateString}}</p>
+    <p>Radio value: {{radioChoice}}</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<html ng-app="ControllerAsApp">
+
+<head>
+  <title>Controller As App</title>
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src='./controller-as.js'></script>
+</head>
+
+<body>
+  <h1>Controller As App</h1>
+  <div ng-controller="ctrl1 as c1">
+    <p ng-bind="c1.testProp"></p>
+    <div ng-controller="ctrl2 as c2">
+      <p ng-bind="c1.testProp"></p>
+    </div>
+  </div>
+</body>
+
+</html>

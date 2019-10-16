@@ -1,0 +1,19 @@
+<html ng-app="NestedControllersApp">
+
+<head>
+  <title>Nested Controllers App</title>
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src='./nested-controllers.js'></script>
+</head>
+
+<body>
+  <h1>Nested Controllers App</h1>
+  <div ng-controller="ctrl1">
+    <span>Prop: {{testProp}}</span>
+  </div>
+  <div ng-controller="ctrl2">
+    <span>Prop: {{testProp}}</span>
+  </div>
+</body>
+
+</html>
