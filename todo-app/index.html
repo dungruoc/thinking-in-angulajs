@@ -1,0 +1,43 @@
+<html ng-app="todo-app">
+
+<head>
+  <title>To-Do App</title>
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src='./todo-app.js'></script>
+</head>
+
+<body>
+  <div ng-controller="todo-controller as todoCtrl">
+    <h1>ToDo App</h1>
+
+    <p>Add a Todo:</p>
+    <p>
+      <input type="text" ng-model="todoCtrl.newTodo"></input>
+    </p>
+    <p>
+      <button ng-click="todoCtrl.addNew()">
+        Add
+      </button>
+    </p>
+    <p>
+      Your Todos:
+    </p>
+    <p>
+      <button ng-click="todoCtrl.editClicked()" ng-show="todoCtrl.editting">Done</button>
+      <button ng-click="todoCtrl.editClicked()" ng-hide="todoCtrl.editting">Edit</button>
+      </button>
+    </p>
+    <ol>
+      <li ng-repeat="item in todoCtrl.todoList track by $index">
+        <span ng-hide="todoCtrl.editting">
+          {{item.element}}
+        </span>
+        <input ng-show="todoCtrl.editting" ng-model="item.element">
+        </input>
+        <button ng-click="todoCtrl.deleteItem($index)" ng-hide="todoCtrl.editting">Delete</button>
+      </li>
+    </ol>
+  </div>
+</body>
+
+</html>
